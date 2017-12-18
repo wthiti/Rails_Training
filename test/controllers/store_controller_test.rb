@@ -10,4 +10,11 @@ class StoreControllerTest < ActionDispatch::IntegrationTest
     assert_select '.price', /\$[,\d]+\.\d\d/
   end
 
+  test "should increase counter" do
+    get store_index_url
+    get store_index_url
+
+    assert_equal session[:counter], 1
+  end
+
 end
